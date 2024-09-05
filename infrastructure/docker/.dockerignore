@@ -1,0 +1,60 @@
+# Files and directories to ignore when building the Docker image
+
+# Version control
+.git
+.gitignore
+
+# Node.js dependencies
+node_modules
+
+# Python virtual environment
+venv
+*.pyc
+__pycache__
+
+# Development and IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# Build artifacts
+build
+dist
+*.egg-info
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# Test files
+tests
+*.test.js
+*.spec.js
+
+# Documentation
+docs
+*.md
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Docker files (to prevent recursive copying)
+Dockerfile
+.dockerignore
+
+# Terraform files
+*.tf
+.terraform
+
+# Other unnecessary files
+*.bak
+*.backup
