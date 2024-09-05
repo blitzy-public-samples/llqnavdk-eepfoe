@@ -1,0 +1,55 @@
+{
+  "name": "mca-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for the Merchant Cash Advance (MCA) application processing system.",
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "format": "prettier --write 'src/**/*.{ts,tsx,css}'"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "redux": "^4.1.0",
+    "@reduxjs/toolkit": "^1.6.0",
+    "react-redux": "^7.2.0",
+    "axios": "^0.24.0",
+    "formik": "^2.2.0",
+    "yup": "^0.32.0",
+    "date-fns": "^2.25.0",
+    "react-pdf": "^5.3.0",
+    "tailwindcss": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.0",
+    "eslint": "^7.32.0",
+    "prettier": "^2.4.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.3.0",
+    "@types/redux": "^3.6.0",
+    "@types/react-redux": "^7.1.0",
+    "@types/axios": "^0.14.0",
+    "@types/formik": "^2.1.0",
+    "@types/yup": "^0.29.0",
+    "@types/date-fns": "^2.6.0",
+    "@types/react-pdf": "^5.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
