@@ -1,0 +1,129 @@
+/* ApplicationManagement.module.css */
+
+/* Styles for the application management container */
+.applicationManagementContainer {
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+/* Styles for the application list */
+.applicationList {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Styles for individual application items */
+.applicationItem {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.applicationItem:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for application details */
+.applicationDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles for application status */
+.applicationStatus {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.statusPending {
+  background-color: #fff9c4;
+  color: #f57f17;
+}
+
+.statusApproved {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+}
+
+.statusRejected {
+  background-color: #ffcdd2;
+  color: #c62828;
+}
+
+/* Styles for action buttons */
+.actionButton {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.viewButton {
+  background-color: #2196f3;
+  color: #ffffff;
+}
+
+.viewButton:hover {
+  background-color: #1976d2;
+}
+
+.editButton {
+  background-color: #4caf50;
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.editButton:hover {
+  background-color: #388e3c;
+}
+
+/* Styles for pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.paginationButton {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: 1px solid #2196f3;
+  background-color: #ffffff;
+  color: #2196f3;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.paginationButton:hover {
+  background-color: #2196f3;
+  color: #ffffff;
+}
+
+.paginationButtonActive {
+  background-color: #2196f3;
+  color: #ffffff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .applicationDetails {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actionButton {
+    margin-top: 10px;
+  }
+
+  .editButton {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
