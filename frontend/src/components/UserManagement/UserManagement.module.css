@@ -1,0 +1,122 @@
+/* UserManagement.module.css */
+
+.userManagementContainer {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.userList {
+  margin-bottom: 20px;
+}
+
+.userListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.userListItem:hover {
+  background-color: #f0f0f0;
+}
+
+.userDetails {
+  flex: 1;
+}
+
+.userName {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.userEmail {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.userRole {
+  font-style: italic;
+  color: #444;
+}
+
+.userActions {
+  display: flex;
+  gap: 10px;
+}
+
+.editButton,
+.deleteButton {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.editButton {
+  background-color: #4caf50;
+  color: white;
+}
+
+.editButton:hover {
+  background-color: #45a049;
+}
+
+.deleteButton {
+  background-color: #f44336;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #d32f2f;
+}
+
+.addUserForm {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.formInput {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.formSubmitButton {
+  background-color: #2196f3;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formSubmitButton:hover {
+  background-color: #1e88e5;
+}
+
+.errorMessage {
+  color: #f44336;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
