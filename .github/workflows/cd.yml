@@ -1,0 +1,53 @@
+name: CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Adjust this to your main branch name if different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.2.1
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+
+      - name: Authenticate with Google Cloud
+        run: |
+          gcloud auth configure-docker
+
+      - name: Deploy application to Google Cloud
+        run: |
+          # Build and push Docker image
+          docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/mca-app:${{ github.sha }} .
+          docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/mca-app:${{ github.sha }}
+          
+          # Deploy to Google Cloud Run
+          gcloud run deploy mca-app \
+            --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/mca-app:${{ github.sha }} \
+            --platform managed \
+            --region us-central1 \
+            --allow-unauthenticated
+
+      - name: Run database migrations
+        run: |
+          # Set up database connection
+          export DATABASE_URL=${{ secrets.DATABASE_URL }}
+          
+          # Run migrations
+          python manage.py db upgrade
+
+      - name: Notify deployment success
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: Deployment to Google Cloud completed successfully!
+          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+        if: success()
